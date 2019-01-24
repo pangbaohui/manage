@@ -4,9 +4,15 @@ import router from './router'
 import store from './store/index'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
-import axiosApi from './api/axios'
+import axios from 'axios'
+import {axiosGet,axiosPost} from './api/axios'
 
-Vue.use(axiosApi)
+
+Vue.prototype.$post = axiosPost;
+Vue.prototype.$get = axiosGet;
+
+
+
 Vue.use(iview)
 Vue.config.productionTip = false;
 
